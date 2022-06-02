@@ -1,0 +1,42 @@
+<div mat-dialog-content>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter your email" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Phone No</mat-label>
+        <input matInput placeholder="Enter your phone no">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="first name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="last name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput placeholder="Enter your registration no">
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+        <mat-label>Event Subject</mat-label>
+        <mat-select formControlName="subject">
+            <mat-option *ngFor="let sub of subjects" [value]="sub">
+              {{sub}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+</div>
+
+<div mat-dialog-actions [align]="'center'">
+    <button mat-raised-button color="accent">Submit</button>
+</div>
